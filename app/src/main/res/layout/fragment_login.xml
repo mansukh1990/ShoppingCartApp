@@ -31,12 +31,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="110dp"
-            android:drawableStart="@drawable/ic_kleine_shape"
             android:drawablePadding="6dp"
             android:text="Kleine."
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:drawableStartCompat="@drawable/ic_kleine_shape" />
 
         <TextView
             android:id="@+id/tvLetsLogin"
@@ -84,7 +84,8 @@
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
             app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
-            app:layout_constraintTop_toBottomOf="@id/edEmailLogin" />
+            app:layout_constraintTop_toBottomOf="@id/edEmailLogin"
+            android:autofillHints="" />
 
         <TextView
             android:id="@+id/tvForgotPasswordLogin"
