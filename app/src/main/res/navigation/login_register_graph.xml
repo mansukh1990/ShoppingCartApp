@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_introduction">
         <action
             android:id="@+id/action_introductionFragment_to_accountOptionsFragment"
-            app:destination="@id/accountOptionsFragment" />
+            app:destination="@id/accountOptionsFragment"
+            app:enterAnim="@anim/from_bottom" />
+        <action
+            android:id="@+id/action_introductionFragment_to_authFragment"
+            app:destination="@id/authFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -22,6 +26,7 @@
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment"
+            app:enterAnim="@anim/from_bottom"
             app:popUpTo="@id/accountOptionsFragment"
             app:popUpToInclusive="false" />
     </fragment>
@@ -33,6 +38,7 @@
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment"
+            app:enterAnim="@anim/from_bottom"
             app:popUpTo="@id/accountOptionsFragment" />
     </fragment>
     <fragment
@@ -42,10 +48,57 @@
         tools:layout="@layout/fragment_account_options">
         <action
             android:id="@+id/action_accountOptionsFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
         <action
             android:id="@+id/action_accountOptionsFragment_to_registerFragment"
-            app:destination="@id/registerFragment" />
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
         <action android:id="@+id/action_accountOptionsFragment_self" />
     </fragment>
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.myapplication.authentication.phone_auth.AuthFragment"
+        android:label="AuthFragment"
+        tools:layout="@layout/fragment_auth">
+        <action
+            android:id="@+id/action_authFragment_to_phoneNumberAuthFragment"
+            app:destination="@id/phoneNumberAuthFragment" />
+        <action
+            android:id="@+id/action_authFragment_to_googleAuthFragment4"
+            app:destination="@id/googleAuthFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/phoneNumberAuthFragment"
+        android:name="com.example.myapplication.authentication.phone_auth.PhoneNumberAuthFragment"
+        android:label="PhoneNumberAuthFragment"
+        tools:layout="@layout/fragment_phone_number_auth">
+        <argument
+            android:name="code"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_phoneNumberAuthFragment_to_checkCodeAuthFragment"
+            app:destination="@id/checkCodeAuthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkCodeAuthFragment"
+        android:name="com.example.myapplication.authentication.phone_auth.CheckCodeAuthFragment"
+        android:label="CheckCodeAuthFragment"
+        tools:layout="@layout/fragment_check_code_auth">
+        <argument
+            android:name="verificationModel"
+            app:argType="com.example.myapplication.data.PhoneVerificationModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/googleAuthFragment"
+        android:name="com.example.myapplication.authentication.google_auth.GoogleAuthFragment"
+        android:label="GoogleAuthFragment"
+        tools:layout="@layout/fragment_google_auth"/>
 </navigation>

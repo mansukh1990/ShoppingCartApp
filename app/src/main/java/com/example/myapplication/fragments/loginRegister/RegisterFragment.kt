@@ -51,7 +51,6 @@ class RegisterFragment : Fragment() {
                 val password = edPasswordRegister.text.toString()
 
                 viewModel.createAccountWithEmailAndPassword(user, password)
-                findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
             }
         }
         lifecycleScope.launch {
@@ -64,6 +63,7 @@ class RegisterFragment : Fragment() {
                     is Resource.Success->{
                         Log.d("test", it.data.toString())
                         binding.buttonRegisterRegister.revertAnimation()
+                        findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
 
                     }
                     is Resource.Error->{

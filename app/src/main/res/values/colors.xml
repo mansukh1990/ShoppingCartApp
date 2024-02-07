@@ -7,6 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="green">#8BC34A</color>
+
 
     <color name="g_gray700">#666666</color>
     <color name="g_black">#171717</color>
@@ -23,4 +25,12 @@
     <color name="g_gray500">#969899</color>
     <color name="g_orange_yellow">#F8BA00</color>
     <color name="g_green">#11FF00</color>
+
+    <color name="colorPrimary">#79C551</color>
+    <color name="filledBlack">#000</color>
+    <color name="offWhite">#BACFCACA</color>
+    <color name="grey">#F2F3F2</color>
+    <color name="googleColor">#5383EC</color>
+
+
 </resources>
